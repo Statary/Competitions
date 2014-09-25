@@ -3,9 +3,6 @@ package competitions;
 import javax.swing.table.*;
 import java.sql.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.event.TableModelEvent;
 
 public class MyTableModel extends AbstractTableModel {
     
@@ -99,42 +96,6 @@ public class MyTableModel extends AbstractTableModel {
         if (statement!=null ) statement.close();
     }
     
-    
-//     public boolean updateDB(String tableName) {
-//         
-//        ArrayList<String> sqlList = new ArrayList();
-//        
-//        for (int i = 0; i < contents.length; i++) {
-//            Object[] objects = contents[i];
-//            sqlList.add("update " + tableName + " set name_ru='" + objects[1] + "', name_en='" + objects[2] + "' where id=" + objects[0] + ";");
-//        }
-//
-//        Statement statement = null;
-//        
-//        try {
-//            statement = conn.createStatement();
-//            
-//            for (String sql : sqlList) {
-//                statement.executeUpdate(sql);
-//            }
-//            
-//        } catch (SQLException ex) {
-//            Logger.getLogger(MyTableModel.class.getName()).log(Level.SEVERE, null, ex);
-//            return false;
-//        }finally{
-//            try {
-//                if (statement!=null) statement.close();
-//            } catch (SQLException ex) {
-//                Logger.getLogger(MyTableModel.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-//        
-//        return true;
-//
-//    }
-     
-     
-
     @Override
     public int getRowCount() {
         return contents.length;

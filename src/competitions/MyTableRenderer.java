@@ -17,7 +17,6 @@ public class MyTableRenderer extends DefaultTableCellRenderer {
 
         setText(value.toString());
 
-
         if (isSelected) {
             setBackground(Color.ORANGE);
             setForeground(Color.BLACK);
@@ -25,10 +24,6 @@ public class MyTableRenderer extends DefaultTableCellRenderer {
             setBackground(Color.WHITE);
             setForeground(Color.BLACK);
         }
-
-
-        if (value.toString().contains("@")) setValue("<html><a href=\"#\">"+value+"</href></html>");
-        
 
         return this;
 

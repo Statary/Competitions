@@ -14,24 +14,18 @@ public class MySqliteConn {
   
   public static Connection getConnection()
   {
-//      conn = null;
-      
       try {
           Driver driver = (Driver) Class.forName("org.sqlite.JDBC").newInstance();
           String url = "jdbc:sqlite:./db/competitions.db";
 
           if( conn == null) conn = DriverManager.getConnection(url);
+ 
           return conn;
           
       } catch (SQLException | ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
           Logger.getLogger(MySqliteConn.class.getName()).log(Level.SEVERE, null, ex);
-//      } finally {
-//        try {
-//          if (conn != null) conn.close();
-//        } catch (SQLException ex) {
-//          Logger.getLogger(Competitions.class.getName()).log(Level.SEVERE, null, ex);
-//        }
       }
+
       return null;
   }
 }
